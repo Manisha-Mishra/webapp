@@ -22,9 +22,9 @@ app.use((req,res,next)=>{
     console.log(`${log}`+'\n');
     next();
 })
-app.use((req,res,next)=>{
-    res.render('maintainance.hbs');
-});
+// app.use((req,res,next)=>{
+//     res.render('maintainance.hbs');
+// });
 
 app.use(express.static(__dirname+'/public'));
 hbs.registerHelper('screamIt',(text)=>{
@@ -35,6 +35,16 @@ app.get('/',(req,res) => {
     res.render('HOME.hbs',{
         pageTitle:'home page',
         welcomeMsg:'welcome to my page',
+        
+    });
+ 
+
+});
+app.get('/project',(req,res) => {
+    //res.send('<h1>root page</h1>');
+    res.render('project.hbs',{
+        pageTitle:'Deploy ur projecthere',
+        welcomeMsg:'deploy',
         
     });
  
